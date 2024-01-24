@@ -25,12 +25,12 @@ candidateName = input.question("Enter name: ");
 
 function askQuestion() {
   // TODO 1.2b: Ask candidate the question and assign the response as candidateAnswer //
-  
+ 
 for (let i = 0; i < questions.length; i++) {
   candidateAnswers.push(input.question(questions[i]));
 
- 
-  
+
+
 }
 
 
@@ -43,11 +43,13 @@ function gradeQuiz(candidateAnswers) {
   for (let i = 0; i < questions.length; i++) {
       console.log(`Correct answer to question ${i +1}: ${correctAnswers[i]}`)
       console.log(`Your answer: ${candidateAnswers[i]}`);
-    
+
 
   }
 
-  
+
+
+
 
  
   
@@ -55,11 +57,23 @@ function gradeQuiz(candidateAnswers) {
 
 
 
-  let grade;  //TODO 3.2 use this variable to calculate the candidates score.
+  let grade = 0;  //TODO 3.2 use this variable to calculate the candidates score.
+  
+  for (let i =0; i <questions.length; i ++){
+    if (correctAnswers[i].toLowerCase() === candidateAnswers[i].toLowerCase()) {
+      grade = grade +1;
 
-
+    
+    
+    }
+    }
+    grade = grade / 5 * 100;
+    console.log(grade);
   return grade;
-}
+  
+  }
+  
+
 
 function runProgram() {
   askForName();
